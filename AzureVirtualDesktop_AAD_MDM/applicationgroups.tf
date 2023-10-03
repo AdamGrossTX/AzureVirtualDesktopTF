@@ -7,6 +7,7 @@ resource "azurerm_virtual_desktop_application_group" "applicationgroup" {
   host_pool_id  = azurerm_virtual_desktop_host_pool.hostpool.id
   friendly_name = "${var.deployment_name} - Appgroup"
   description   = "${var.deployment_name}: An application group"
+  default_desktop_display_name = "GOEUC-AADMDM-Desktop-${var.workspace}"
   tags = {
     "description" = "${var.deployment_name}: An application group"
   }
