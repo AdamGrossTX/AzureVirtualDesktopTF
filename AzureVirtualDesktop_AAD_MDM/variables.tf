@@ -1,13 +1,13 @@
 variable "deployment_name" {
   type        = string
   description = "Name of the deployement. I.e. GOLAB"
-  default = "GOLAB"
+  default     = "GOLAB"
 }
 
 variable "workspace" {
   type        = string
   description = "Name of the Terraform workspace. I.e. POIS, FLOW, CARD"
-  default = "POIS"
+  default     = "POIS"
 }
 
 variable "location" {
@@ -30,8 +30,8 @@ variable "sessionhost_sku" {
 
 variable "azure_vnet_cidr" {
   description = "CIDR adres of VNET"
-  type = string
-  default = "10.13.4.0/24"
+  type        = string
+  default     = "10.13.4.0/24"
 }
 
 variable "local_admin" {

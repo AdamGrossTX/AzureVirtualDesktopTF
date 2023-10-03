@@ -69,7 +69,7 @@ resource "azurerm_virtual_machine_extension" "avd_addaadjprivate" {
   depends_on = [
     azurerm_virtual_machine_extension.avd_aadloginforwindows
   ]
-  count                      = var.sessionhost_amount
+  count                = var.sessionhost_amount
   name                 = "avd-${count.index + 1}-GOEUC-AADJPRIVATE"
   virtual_machine_id   = azurerm_windows_virtual_machine.sessionhostvms.*.id[count.index]
   publisher            = "Microsoft.Compute"

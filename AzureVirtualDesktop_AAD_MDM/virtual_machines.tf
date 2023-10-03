@@ -29,7 +29,7 @@ resource "azurerm_windows_virtual_machine" "sessionhostvms" {
   }
 
   lifecycle {
-    ignore_changes = [ admin_password ]
+    ignore_changes = [admin_password]
   }
 }
 
@@ -38,6 +38,6 @@ output "localadmin_username" {
   value = var.local_admin
 }
 output "localadmin_password" {
-    value = random_password.password.result
-    sensitive = true
+  value     = random_password.password.result
+  sensitive = true
 }
