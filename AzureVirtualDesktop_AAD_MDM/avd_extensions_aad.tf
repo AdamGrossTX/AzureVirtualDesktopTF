@@ -6,12 +6,12 @@ locals {
 }
 
 resource "azurerm_virtual_machine_extension" "avd_register_session_host" {
-    count                      = var.sessionhost_amount
+  count                = var.sessionhost_amount
   name                 = "avd-${count.index + 1}-GOEUC-register-session-host"
   virtual_machine_id   = azurerm_windows_virtual_machine.sessionhostvms.*.id[count.index]
   publisher            = "Microsoft.Powershell"
   type                 = "DSC"
-  type_handler_version = "2.83"
+  type_handler_version = "2.73"
 
   settings = <<SETTINGS
     {
